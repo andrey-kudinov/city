@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function getWeather(city = Samara) {
-  let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d8cec61e4e1d4c1c6ce59fc3b4e5907&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2d8cec61e4e1d4c1c6ce59fc3b4e5907&units=metric`;
   const response = await fetch(url, {
     method: "GET",
     mode: "cors",
