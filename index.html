@@ -8,29 +8,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
     <script src="./main.js"></script>
   </head>
   <body>
     <div class="page">
-      <h1 class="title">Тестовое задание</h1>
-      <div class="btns">
-        <button class="btn btn-green">Время</button>
-        <button class="btn btn-green">Город</button>
-        <button class="btn btn-green btn-weather-js">Погода</button>
-      </div>
-      <div class="item time">
-        <div class="item__title">
-          <span>Текущее время в городе<br /></span>
-          <span class="city-js">City</span>
+      <div class="content">
+        <div class="wrap">
+          <h1 class="title">Тестовое задание</h1>
+
+          <input class="input" type="text" placeholder="Название города (англ)"/>
+          <button class="btn btn-blue search-weather-js">Показать</button>
+
+          <div class="btns">
+            <button class="btn btn-green">Время</button>
+            <button class="btn btn-green">Город</button>
+            <button class="btn btn-green btn-weather-js">Погода</button>
+          </div>
+
+          <div class="item time">
+            <div class="item__title">
+              <span>Текущее время в городе<br /></span>
+              <span class="time-city-js">City</span>
+            </div>
+            <div class="item__content time-js"></div>
+          </div>
+
+          <div class="item city city-js">
+          </div>
+
+          <div class="item weather">
+            <span class="temp-js">Текущее температа: </span>
+            <span class="wind-js">Скорость ветра: </span>
+            <div class="wrap-img">
+              <img src="" alt="" />
+            </div>
+          </div>
         </div>
-        <div class="item__content time-js"></div>
-      </div>
-
-      <div class="item city">Город</div>
-
-      <div class="item weather">
-        <input type="text" />
-        <button class="btn btn-blue search-weather-js">Показать</button>
       </div>
     </div>
   </body>
