@@ -56,7 +56,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 }
 .btn {
   border-radius: 5px;
@@ -140,9 +140,12 @@ body {
 
 @media all and (max-width: 500px) {
   .input {
-    width: 90%;
+    width: 80%;
   }
   .input::placeholder {
-    font-size: 23px;
+    font-size: 20px;
+  }
+  .btns {
+    margin-bottom: 20px;
   }
 } 
