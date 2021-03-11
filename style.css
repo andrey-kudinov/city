@@ -1,15 +1,18 @@
+body {
+  background: #dedede;
+}
+
 .page {
   display: grid;
   grid-template-columns:
     [full-start] minmax(0, 1fr)
-    [main-start] minmax(0, 1140px)
+    [main-start] minmax(0, 1170px)
     [main-end] minmax(0, 1fr)
     [full-end];
   font-family: "Source Sans Pro", sans-serif;
   line-height: 1.2;
   color: #061b36;
   background: #dedede;
-  height: 100vh;
 }
 .page > * {
   grid-column: main;
@@ -26,16 +29,23 @@
   line-height: 1.2;
   color: #061b36;
   background: #fff;
-  height: 100%;
   margin: 45px 0;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
 }
 .content > * {
   grid-column: main;
-  padding: 20px 0;
 }
 .wrap {
   display: flex;
   flex-direction: column;
+  min-height: 800px;
+  padding: 30px 0;
 }
 .title {
   text-align: center;
@@ -46,6 +56,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 20px;
+  margin-bottom: 20px;
 }
 .btn {
   border-radius: 5px;
@@ -78,6 +89,7 @@
   height: 41px;
   margin: 0 auto;
   margin-bottom: 20px;
+  flex-shrink: 0;
 }
 .btn-blue:hover {
   background-color: #0062ffd4;
@@ -87,12 +99,13 @@
 }
 .item {
   display: none;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 30vh;
+  height: 100%;
   font-size: 28px;
   line-height: 30px;
+  text-align: center;
 }
 .show {
   display: flex;
@@ -121,3 +134,15 @@
   width: 100%;
   height: 100%;
 }
+.time__text {
+  margin-bottom: 10px;
+}
+
+@media all and (max-width: 500px) {
+  .input {
+    width: 90%;
+  }
+  .input::placeholder {
+    font-size: 23px;
+  }
+} 

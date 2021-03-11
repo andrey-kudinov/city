@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         timeZone = Math.round(data.timezone / 3600) - 4;
+        console.log('data.timezone -', data.timezone);
+        console.log('timeZone -', timeZone);
+        
         document.querySelector(".temp-js").textContent = `Текущее температа: ${data.main.temp}°C`;
         document.querySelector(".wind-js").textContent = `Скорость ветра: ${data.wind.speed}°C`;
         document.querySelector(".wrap-img img").setAttribute("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
@@ -28,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
           time(timeZone);
         }, 1000);
       });
-    let links = "";
     let linkHTML = "";
     getWiki(input.value)
       .then((response) => {
@@ -72,8 +74,12 @@ async function getWiki(city = Samara) {
 
 function time(timeZone = 0) {
   let time = new Date();
+  let hours = time.getHours() + timeZone;
+  console.log('hours -', hours);
+  
+  hours <= 24 ? hours : hours = hours - 24
   document.querySelector(".time-js").textContent = `
-    ${time.getHours() + timeZone < 10 ? "0" + time.getHours() + timeZone : time.getHours() + timeZone}:
+    ${hours < 10 ? "0" + hours : hours}:
     ${time.getMinutes() < 10 ? "0" + time.getMinutes() : time.getMinutes()}:
     ${time.getSeconds() < 10 ? "0" + time.getSeconds() : time.getSeconds()}`;
 }
