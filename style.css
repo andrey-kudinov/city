@@ -137,8 +137,14 @@ body {
 .time__text {
   margin-bottom: 10px;
 }
+.temp {
+  margin-bottom: 10px;
+}
 
 @media all and (max-width: 500px) {
+  .wrap {
+    min-height: 400px;
+  }
   .input {
     width: 80%;
   }
