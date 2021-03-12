@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   geoFind();
   setTimeout(() => {
+    if(!geoData.list[0]) return
     getData(geoData.list[0].name);
   }, 1500);
 
@@ -114,8 +115,8 @@ function getData(city) {
         item.disabled = false;
       });
       timeZone = Math.round(data.timezone / 3600) - 4;
-      document.querySelector(".temp-js").textContent = `Текущее температура: ${data.main.temp}°C`;
-      document.querySelector(".wind-js").textContent = `Скорость ветра: ${data.wind.speed}°C`;
+      document.querySelector(".temp-js").textContent = `Текущее температура: ${Math.round(data.main.temp)}°C`;
+      document.querySelector(".wind-js").textContent = `Скорость ветра: ${Math.round(data.wind.speed)} м/с`;
       document.querySelector(".wrap-img img").setAttribute("src", `http://openweathermap.org/img/w/${data.weather[0].icon}.png`);
       setInterval(function () {
         time(timeZone);
